@@ -1,0 +1,80 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+flutter/ephemeral/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+# Visual Studio user-specific files.
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+.flutter-plugins
+.flutter-plugins-dependencies
+vca.iml
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/**
+linux
+macos
+windows
+
+.flutter-plugins
+
+.flutter-plugins-dependencies
+analysis_options.yaml
+.packages
+.pub-cache/
+.pub/
+/build/
+# Visual Studio build-related files.
+x64/
+x86/
+
+
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Visual Studio cache files
+# files ending in .cache can be ignored
+*.[Cc]ache
+# but keep track of directories ending in .cache
+!*.[Cc]ache/
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+ios/Podfile.lock
+macos/Flutter/GeneratedPluginRegistrant.swift
+linux/flutter/generated_plugins.cmake
+pubspec.lock
+ios/Podfile.lock
