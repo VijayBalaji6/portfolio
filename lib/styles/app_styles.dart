@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppStyles {
-  static TextStyle userNameTextStyle = TextStyle(fontSize: 10.sp);
+  static TextStyle userNameTextStyle = TextStyle(fontSize: 7.sp);
 
   static TextStyle appTitleStyle = TextStyle(fontSize: 5.sp);
 

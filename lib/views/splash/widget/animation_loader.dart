@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/themes/app_colors.dart';
 
 class AnimatedLoadingText extends StatelessWidget {
   const AnimatedLoadingText({super.key});
@@ -13,24 +14,24 @@ class AnimatedLoadingText extends StatelessWidget {
           children: [
             LinearProgressIndicator(
               backgroundColor: Colors.black,
-              color: Colors.deepPurpleAccent,
+              color: AppColors.purple,
               value: value,
             ),
             const SizedBox(
-              height: 200 / 2,
+              height: 20,
             ),
             Text(
               '${(value * 100).toInt()}%',
               style: const TextStyle(
-                  color: Colors.white,
+                  color: AppColors.white,
                   fontWeight: FontWeight.bold,
                   shadows: [
                     Shadow(
-                        color: Colors.pink,
+                        color: AppColors.pink,
                         blurRadius: 10,
                         offset: Offset(2, 2)),
                     Shadow(
-                        color: Colors.blue,
+                        color: AppColors.blue,
                         blurRadius: 10,
                         offset: Offset(-2, -2)),
                   ]),
