@@ -2,16 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/constants/app_constants.dart';
+import 'package:portfolio/constants/app_gloabls.dart';
 import 'package:portfolio/providers/nav_notifier.dart';
 import 'package:portfolio/providers/theme_notifier.dart';
 import 'package:portfolio/styles/app_styles.dart';
-
-List<String> views = [
-  AppTitles.home,
-  AppTitles.about,
-  AppTitles.work,
-  AppTitles.contact
-];
+import 'package:portfolio/views/portfolio.dart';
 
 class PortFolioFloatingAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -19,6 +14,11 @@ class PortFolioFloatingAppBar extends StatelessWidget
 
   @override
   Size get preferredSize => const Size.fromHeight(200);
+
+  void scrollSection({required GlobalKey sectionKey}) {
+    Scrollable.ensureVisible(sectionKey.currentContext!,
+        duration: const Duration(seconds: 1));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +56,12 @@ class PortFolioFloatingAppBar extends StatelessWidget
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: () => ref
-                              .read(counterProvider.notifier)
-                              .onChangeTabView(selectedTabView: title),
+                          onTap: () {
+                            scrollSection(sectionKey: getCurrentViewKey(title));
+                            ref
+                                .read(counterProvider.notifier)
+                                .onChangeTabView(selectedTabView: title);
+                          },
                           child: Text(title,
                               style: currentSelectedPage == title
                                   ? AppStyles.appTitleSelectedStyle
@@ -71,6 +74,19 @@ class PortFolioFloatingAppBar extends StatelessWidget
           );
         },
       );
+
+  GlobalKey getCurrentViewKey(String titleKey) {
+    switch (titleKey) {
+      case AppTitles.about:
+        return aboutViewKey;
+      case AppTitles.work:
+        return workViewKey;
+      case AppTitles.contact:
+        return contactViewKey;
+      default:
+        return homeViewKey;
+    }
+  }
 
   Widget builtThemeSwitcher() => Row(
         crossAxisAlignment: CrossAxisAlignment.center,
