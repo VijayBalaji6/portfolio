@@ -13,7 +13,10 @@ class ContactView extends StatelessWidget {
       children: [
         Text(
           "Contact Me",
-          style: TextStyle(fontSize: 7.sp, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 0.03.sh,
         ),
         const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -21,6 +24,10 @@ class ContactView extends StatelessWidget {
             SocialMediaButton(
               assetIcon: SocialIconAssets.mailImage,
               socialName: SocialContact.mail,
+            ),
+            SocialMediaButton(
+              assetIcon: SocialIconAssets.linkedInImage,
+              socialName: SocialContact.linkedIn,
             ),
             SocialMediaButton(
               assetIcon: SocialIconAssets.instagramImage,

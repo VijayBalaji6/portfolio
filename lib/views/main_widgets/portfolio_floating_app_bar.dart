@@ -5,8 +5,8 @@ import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/constants/app_gloabls.dart';
 import 'package:portfolio/providers/nav_notifier.dart';
 import 'package:portfolio/providers/theme_notifier.dart';
+import 'package:portfolio/responsive/responsive_layout.dart';
 import 'package:portfolio/styles/app_styles.dart';
-import 'package:portfolio/views/portfolio.dart';
 
 class PortFolioFloatingAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -17,22 +17,35 @@ class PortFolioFloatingAppBar extends StatelessWidget
 
   void scrollSection({required GlobalKey sectionKey}) {
     Scrollable.ensureVisible(sectionKey.currentContext!,
-        duration: const Duration(seconds: 1));
+        duration: const Duration(milliseconds: 500));
   }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 0.05.sw, vertical: 0.03.sh),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          builtName(),
-          builtAppTitle(),
-          builtThemeSwitcher(),
-        ],
+      child: ResponsiveLayout(
+        desktop: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            builtName(),
+            builtAppTitle(),
+            builtThemeSwitcher(),
+          ],
+        ),
+        mobile: Row(
+          children: [
+            const IconButton(
+              onPressed: null,
+              icon: Icon(
+                Icons.menu,
+              ),
+            ),
+            buildMobileThemeSwitcher()
+          ],
+        ),
       ),
     );
   }
@@ -110,5 +123,18 @@ class PortFolioFloatingAppBar extends StatelessWidget
             style: AppStyles.appTitleStyle,
           )
         ],
+      );
+
+  Widget buildMobileThemeSwitcher() => Consumer(
+        builder: (BuildContext context, WidgetRef ref, Widget? child) {
+          final currentTheme = ref.watch(themeProvider);
+          return IconButton(
+            icon: Icon(
+              currentTheme ? Icons.light_mode : Icons.dark_mode,
+            ),
+            onPressed: () =>
+                ref.read(themeProvider.notifier).state = !currentTheme,
+          );
+        },
       );
 }

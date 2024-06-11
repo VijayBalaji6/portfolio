@@ -17,6 +17,7 @@ class SocialContact {
   static const String whatsapp = "Whatsapp";
   static const String telegram = "Telegram";
   static const String mail = "Mail";
+  static const String linkedIn = "LinkedIn";
 }
 
 class HomeConstants {

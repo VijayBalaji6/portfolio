@@ -22,7 +22,7 @@ class MyApp extends ConsumerWidget {
         title: AppConstants.appName,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.getAppTheme(context, ref.watch(themeProvider)),
-        home:  PortFolio(),
+        home: const PortFolio(),
       ),
     );
   }
