@@ -2,48 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/constants/app_constants.dart';
+import 'package:portfolio/constants/app_gloabls.dart';
 import 'package:portfolio/providers/nav_notifier.dart';
 import 'package:portfolio/providers/theme_notifier.dart';
 import 'package:portfolio/styles/app_styles.dart';
 
-List<String> views = [
-  AppTitles.home,
-  AppTitles.about,
-  AppTitles.work,
-  AppTitles.contact
-];
+class AppBarDesktopView extends StatelessWidget {
+  const AppBarDesktopView({super.key});
 
-class PortFolioFloatingAppBar extends StatelessWidget
-    implements PreferredSizeWidget {
-  const PortFolioFloatingAppBar({super.key});
-
-  @override
-  Size get preferredSize => const Size.fromHeight(200);
+  void scrollSection({required GlobalKey sectionKey}) {
+    Scrollable.ensureVisible(sectionKey.currentContext!,
+        duration: const Duration(milliseconds: 500));
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 0.05.sw, vertical: 0.03.sh),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          builtName(),
-          builtAppTitle(),
-          builtThemeSwitcher(),
-        ],
-      ),
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        builtName(),
+        builtAppTitle(),
+        builtDesktopThemeSwitcher(),
+      ],
     );
   }
 
   Widget builtName() => Text(
         AppTitles.userName,
         style: AppStyles.userNameTextStyle,
-      );
-
-  SizedBox titleSpaceSizer() => SizedBox(
-        width: .02.sw,
       );
 
   Widget builtAppTitle() => Consumer(
@@ -56,15 +44,20 @@ class PortFolioFloatingAppBar extends StatelessWidget
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: () => ref
-                              .read(counterProvider.notifier)
-                              .onChangeTabView(selectedTabView: title),
+                          onTap: () {
+                            scrollSection(sectionKey: getCurrentViewKey(title));
+                            ref
+                                .read(counterProvider.notifier)
+                                .onChangeTabView(selectedTabView: title);
+                          },
                           child: Text(title,
                               style: currentSelectedPage == title
                                   ? AppStyles.appTitleSelectedStyle
                                   : AppStyles.appTitleStyle),
                         ),
-                        titleSpaceSizer()
+                        SizedBox(
+                          width: .02.sw,
+                        ),
                       ],
                     ))
                 .toList(),
@@ -72,7 +65,20 @@ class PortFolioFloatingAppBar extends StatelessWidget
         },
       );
 
-  Widget builtThemeSwitcher() => Row(
+  GlobalKey getCurrentViewKey(String titleKey) {
+    switch (titleKey) {
+      case AppTitles.about:
+        return aboutViewKey;
+      case AppTitles.work:
+        return workViewKey;
+      case AppTitles.contact:
+        return contactViewKey;
+      default:
+        return homeViewKey;
+    }
+  }
+
+  Widget builtDesktopThemeSwitcher() => Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
