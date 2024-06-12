@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio/styles/app_styles.dart';
 import 'package:portfolio/themes/app_colors.dart';
 
 class WorkDesktopView extends StatelessWidget {
@@ -13,7 +14,7 @@ class WorkDesktopView extends StatelessWidget {
       children: [
         Text(
           "Explore My Latest works",
-          style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold),
+          style: AppStyles.headlineMedium
         ),
         SizedBox(
           height: 0.03.sh,

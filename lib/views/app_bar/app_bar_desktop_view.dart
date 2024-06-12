@@ -6,6 +6,7 @@ import 'package:portfolio/constants/app_gloabls.dart';
 import 'package:portfolio/providers/nav_notifier.dart';
 import 'package:portfolio/providers/theme_notifier.dart';
 import 'package:portfolio/styles/app_styles.dart';
+import 'package:portfolio/themes/app_colors.dart';
 
 void scrollSection({required GlobalKey sectionKey}) {
   Scrollable.ensureVisible(sectionKey.currentContext!,
@@ -44,7 +45,7 @@ class AppBarDesktopView extends StatelessWidget {
 
   Widget builtName() => Text(
         AppTitles.userName,
-        style: AppStyles.userNameTextStyle,
+        style: AppStyles.headlineMedium,
       );
 
   Widget builtAppTitle() => Consumer(
@@ -64,9 +65,10 @@ class AppBarDesktopView extends StatelessWidget {
                                 .onChangeTabView(selectedTabView: title);
                           },
                           child: Text(title,
-                              style: currentSelectedPage == title
-                                  ? AppStyles.appTitleSelectedStyle
-                                  : AppStyles.appTitleStyle),
+                              style: AppStyles.titleMedium.copyWith(
+                                  color: currentSelectedPage == title
+                                      ? AppColors.orange
+                                      : null)),
                         ),
                         SizedBox(
                           width: .02.sw,
@@ -97,7 +99,7 @@ class AppBarDesktopView extends StatelessWidget {
           ),
           Text(
             AppTitles.dark,
-            style: AppStyles.appTitleStyle,
+            style: AppStyles.themeSwitcherTitleStyle,
           )
         ],
       );

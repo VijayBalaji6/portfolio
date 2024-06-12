@@ -69,7 +69,7 @@ class HomeDesktopView extends StatelessWidget {
             Image.asset(HomeAssets.waveHandImage),
             Text(
               HomeConstants.heyThere,
-              style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+              style: AppStyles.titleLarge,
             ),
           ],
         ),
@@ -78,7 +78,7 @@ class HomeDesktopView extends StatelessWidget {
         ),
         Text(
           HomeConstants.welcomeHeader,
-          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+          style: AppStyles.titleLarge,
         ),
         SizedBox(
           height: 0.03.sh,
