@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/constants/app_gloabls.dart';
-import 'package:portfolio/views/main_widgets/portfolio_floating_app_bar.dart';
+import 'package:portfolio/views/app_bar/portfolio_floating_app_bar.dart';
 import 'package:portfolio/views/screens/about_view/about.dart';
 import 'package:portfolio/views/screens/contacts_view/contacts.dart';
 import 'package:portfolio/views/screens/home_view/home.dart';
