@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/constants/app_gloabls.dart';
 import 'package:portfolio/providers/theme_notifier.dart';
 
 class AppBarMobileView extends StatelessWidget {
@@ -10,9 +11,9 @@ class AppBarMobileView extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const IconButton(
-          onPressed: null,
-          icon: Icon(
+        IconButton(
+          onPressed: () => drawerKey.currentState?.openDrawer(),
+          icon: const Icon(
             Icons.menu,
           ),
         ),

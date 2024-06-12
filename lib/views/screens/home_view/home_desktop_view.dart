@@ -6,8 +6,8 @@ import 'package:portfolio/styles/app_styles.dart';
 import 'package:portfolio/themes/app_colors.dart';
 import 'package:portfolio/views/screens/home_view/widgets/social_contact.dart';
 
-class HomeWelcomeView extends StatelessWidget {
-  const HomeWelcomeView({super.key});
+class HomeDesktopView extends StatelessWidget {
+  const HomeDesktopView({super.key});
 
   @override
   Widget build(BuildContext context) {

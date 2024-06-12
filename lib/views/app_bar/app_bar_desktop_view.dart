@@ -7,13 +7,26 @@ import 'package:portfolio/providers/nav_notifier.dart';
 import 'package:portfolio/providers/theme_notifier.dart';
 import 'package:portfolio/styles/app_styles.dart';
 
+void scrollSection({required GlobalKey sectionKey}) {
+  Scrollable.ensureVisible(sectionKey.currentContext!,
+      duration: const Duration(milliseconds: 500));
+}
+
+GlobalKey getCurrentViewKey(String titleKey) {
+  switch (titleKey) {
+    case AppTitles.about:
+      return aboutViewKey;
+    case AppTitles.work:
+      return workViewKey;
+    case AppTitles.contact:
+      return contactViewKey;
+    default:
+      return homeViewKey;
+  }
+}
+
 class AppBarDesktopView extends StatelessWidget {
   const AppBarDesktopView({super.key});
-
-  void scrollSection({required GlobalKey sectionKey}) {
-    Scrollable.ensureVisible(sectionKey.currentContext!,
-        duration: const Duration(milliseconds: 500));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,19 +77,6 @@ class AppBarDesktopView extends StatelessWidget {
           );
         },
       );
-
-  GlobalKey getCurrentViewKey(String titleKey) {
-    switch (titleKey) {
-      case AppTitles.about:
-        return aboutViewKey;
-      case AppTitles.work:
-        return workViewKey;
-      case AppTitles.contact:
-        return contactViewKey;
-      default:
-        return homeViewKey;
-    }
-  }
 
   Widget builtDesktopThemeSwitcher() => Row(
         crossAxisAlignment: CrossAxisAlignment.center,
