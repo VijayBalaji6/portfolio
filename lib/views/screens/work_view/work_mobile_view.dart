@@ -51,8 +51,7 @@ Widget builtProjectShowCaseList({required String projectName}) => SizedBox(
                         children: [
                           Text(
                             projectName,
-                            style: TextStyle(
-                                fontSize: 10.sp, fontWeight: FontWeight.bold),
+                            style: AppStyles.labelLarge,
                           ),
                         ],
                       ),

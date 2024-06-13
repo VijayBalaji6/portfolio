@@ -66,7 +66,11 @@ class HomeDesktopView extends StatelessWidget {
       children: [
         Row(
           children: [
-            Image.asset(HomeAssets.waveHandImage),
+            Image.asset(
+              HomeAssets.waveHandImage,
+              height: 50,
+              width: 50,
+            ),
             Text(
               HomeConstants.heyThere,
               style: AppStyles.titleLarge,
@@ -85,10 +89,7 @@ class HomeDesktopView extends StatelessWidget {
         ),
         Text(
           HomeConstants.welcomeNote,
-          style: TextStyle(
-              fontSize: 5.sp,
-              fontWeight: FontWeight.bold,
-              color: AppColors.grey),
+          style: AppStyles.bodyMedium.copyWith(color: AppColors.grey),
         ),
       ],
     );

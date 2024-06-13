@@ -68,8 +68,8 @@ class HomeMobileView extends StatelessWidget {
           children: [
             Image.asset(
               HomeAssets.waveHandImage,
-              height: .1.sh,
-              width: .1.sh,
+              height: 50,
+              width: 50,
             ),
             Text(
               HomeConstants.heyThere,
@@ -89,10 +89,7 @@ class HomeMobileView extends StatelessWidget {
         ),
         Text(
           HomeConstants.welcomeNote,
-          style: TextStyle(
-              fontSize: 5.sp,
-              fontWeight: FontWeight.bold,
-              color: AppColors.grey),
+          style: AppStyles.bodyMedium.copyWith(color: AppColors.grey),
         ),
       ],
     );

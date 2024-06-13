@@ -12,10 +12,7 @@ class WorkDesktopView extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Explore My Latest works",
-          style: AppStyles.headlineMedium
-        ),
+        Text("Explore My Latest works", style: AppStyles.headlineMedium),
         SizedBox(
           height: 0.03.sh,
         ),
@@ -52,8 +49,7 @@ Widget builtProjectShowCaseList({required String projectName}) => Flexible(
                       ),
                       Text(
                         projectName,
-                        style: TextStyle(
-                            fontSize: 5.sp, fontWeight: FontWeight.bold),
+                        style: AppStyles.labelLarge,
                       )
                     ],
                   ),

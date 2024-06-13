@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/constants/asserts_constants.dart';
+import 'package:portfolio/styles/app_styles.dart';
 import 'package:portfolio/views/screens/contacts_view/widgets/social_media_button.dart';
 
-class ContactView extends StatelessWidget {
-  const ContactView({super.key});
+class ContactDesktopView extends StatelessWidget {
+  const ContactDesktopView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class ContactView extends StatelessWidget {
       children: [
         Text(
           "Contact Me",
-          style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold),
+          style: AppStyles.headlineMedium,
         ),
         SizedBox(
           height: 0.03.sh,
