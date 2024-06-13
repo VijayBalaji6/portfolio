@@ -15,7 +15,7 @@ class AppBarDrawer extends StatelessWidget {
       elevation: 10,
       child: Consumer(
         builder: (BuildContext context, WidgetRef ref, Widget? child) {
-          final currentSelectedPage = ref.watch(counterProvider);
+          final currentSelectedPage = ref.watch(scrollNavProvider);
           return ListView.builder(
             shrinkWrap: true,
             itemCount: views.length,
@@ -35,7 +35,7 @@ class AppBarDrawer extends StatelessWidget {
                 onTap: () {
                   scrollSection(sectionKey: getCurrentViewKey(currentTitle));
                   ref
-                      .read(counterProvider.notifier)
+                      .read(scrollNavProvider.notifier)
                       .onChangeTabView(selectedTabView: currentTitle);
                   Navigator.pop(context);
                 },

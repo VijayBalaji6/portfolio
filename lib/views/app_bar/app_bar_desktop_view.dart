@@ -50,7 +50,7 @@ class AppBarDesktopView extends StatelessWidget {
 
   Widget builtAppTitle() => Consumer(
         builder: (BuildContext context, WidgetRef ref, Widget? child) {
-          final currentSelectedPage = ref.watch(counterProvider);
+          final currentSelectedPage = ref.watch(scrollNavProvider);
           return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: views
@@ -61,7 +61,7 @@ class AppBarDesktopView extends StatelessWidget {
                           onTap: () {
                             scrollSection(sectionKey: getCurrentViewKey(title));
                             ref
-                                .read(counterProvider.notifier)
+                                .read(scrollNavProvider.notifier)
                                 .onChangeTabView(selectedTabView: title);
                           },
                           child: Text(title,
