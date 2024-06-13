@@ -66,10 +66,14 @@ class HomeDesktopView extends StatelessWidget {
       children: [
         Row(
           children: [
-            Image.asset(HomeAssets.waveHandImage),
+            Image.asset(
+              HomeAssets.waveHandImage,
+              height: 50,
+              width: 50,
+            ),
             Text(
               HomeConstants.heyThere,
-              style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+              style: AppStyles.titleLarge,
             ),
           ],
         ),
@@ -78,17 +82,14 @@ class HomeDesktopView extends StatelessWidget {
         ),
         Text(
           HomeConstants.welcomeHeader,
-          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+          style: AppStyles.titleLarge,
         ),
         SizedBox(
           height: 0.03.sh,
         ),
         Text(
           HomeConstants.welcomeNote,
-          style: TextStyle(
-              fontSize: 5.sp,
-              fontWeight: FontWeight.bold,
-              color: AppColors.grey),
+          style: AppStyles.bodyMedium.copyWith(color: AppColors.grey),
         ),
       ],
     );

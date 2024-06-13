@@ -18,8 +18,8 @@ class HomeSocialContactButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(20.sp),
       child: Image.asset(
         assetIcon,
-        height: 10.sp,
-        width: 10.sp,
+        height: 35,
+        width: 35,
       ),
     );
   }

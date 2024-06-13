@@ -4,7 +4,7 @@ import 'package:portfolio/constants/app_gloabls.dart';
 import 'package:portfolio/views/app_bar/portfolio_floating_app_bar.dart';
 import 'package:portfolio/views/drawer/app_bar_drawer.dart';
 import 'package:portfolio/views/screens/about_view/about.dart';
-import 'package:portfolio/views/screens/contacts_view/contacts.dart';
+import 'package:portfolio/views/screens/contacts_view/contact_view.dart';
 import 'package:portfolio/views/screens/home_view/home_view.dart';
 import 'package:portfolio/views/screens/work_view/work_view.dart';
 

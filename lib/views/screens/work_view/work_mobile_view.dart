@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio/styles/app_styles.dart';
 import 'package:portfolio/themes/app_colors.dart';
 
 class WorkMobileView extends StatelessWidget {
@@ -13,7 +14,7 @@ class WorkMobileView extends StatelessWidget {
       children: [
         Text(
           "Explore My Latest works",
-          style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold),
+          style: AppStyles.headlineMedium,
         ),
         SizedBox(
           height: 0.03.sh,
@@ -27,6 +28,7 @@ class WorkMobileView extends StatelessWidget {
 Widget builtProjectShowCaseList({required String projectName}) => SizedBox(
       child: ListView.builder(
           shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: 4,
           itemBuilder: (BuildContext context, int index) => Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -49,8 +51,7 @@ Widget builtProjectShowCaseList({required String projectName}) => SizedBox(
                         children: [
                           Text(
                             projectName,
-                            style: TextStyle(
-                                fontSize: 10.sp, fontWeight: FontWeight.bold),
+                            style: AppStyles.labelLarge,
                           ),
                         ],
                       ),

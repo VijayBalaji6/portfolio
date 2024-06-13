@@ -72,7 +72,7 @@ class AppTheme {
           thumbColor: WidgetStateProperty.all(AppColors.orange),
         ),
         listTileTheme: ListTileThemeData(
-          iconColor: AppColors.orange,
+          iconColor: isDarkTheme ? AppColors.white : AppColors.black,
           textColor: isDarkTheme ? AppColors.white : AppColors.black,
         ),
         appBarTheme: AppBarTheme(

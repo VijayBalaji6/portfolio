@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio/styles/app_styles.dart';
 import 'package:portfolio/themes/app_colors.dart';
 
 class WorkDesktopView extends StatelessWidget {
@@ -11,10 +12,7 @@ class WorkDesktopView extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Explore My Latest works",
-          style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold),
-        ),
+        Text("Explore My Latest works", style: AppStyles.headlineMedium),
         SizedBox(
           height: 0.03.sh,
         ),
@@ -51,8 +49,7 @@ Widget builtProjectShowCaseList({required String projectName}) => Flexible(
                       ),
                       Text(
                         projectName,
-                        style: TextStyle(
-                            fontSize: 5.sp, fontWeight: FontWeight.bold),
+                        style: AppStyles.labelLarge,
                       )
                     ],
                   ),
