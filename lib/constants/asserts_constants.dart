@@ -1,5 +1,5 @@
 class Assets {
-  static const String splashImage = 'assets/splash/splash.svg';
+  static const String splashImage = 'assets/splash/splash_logo.jpg';
 }
 
 class HomeAssets {

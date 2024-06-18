@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/constants/asserts_constants.dart';
 import 'package:portfolio/themes/app_colors.dart';
 
@@ -68,7 +67,7 @@ class AnimatedImageContainerState extends State<AnimatedImageContainer>
                 color: AppColors.black,
                 borderRadius: BorderRadius.circular(30),
               ),
-              child: SvgPicture.asset(
+              child: Image.asset(
                 Assets.splashImage,
                 height: 100,
                 width: 100,
