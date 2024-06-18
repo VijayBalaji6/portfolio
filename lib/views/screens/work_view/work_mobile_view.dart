@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/styles/app_styles.dart';
 import 'package:portfolio/themes/app_colors.dart';
+import 'package:portfolio/views/screens/work_view/widgets/work_view_widgets.dart';
 
 class WorkMobileView extends StatelessWidget {
   const WorkMobileView({super.key});
@@ -12,10 +13,11 @@ class WorkMobileView extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Explore My Latest works",
-          style: AppStyles.headlineMedium,
+        WorkViewWidgets.exploreMyLatestWorks(),
+        SizedBox(
+          height: 0.03.sh,
         ),
+        WorkViewWidgets.seeProjectsButton(),
         SizedBox(
           height: 0.03.sh,
         ),
