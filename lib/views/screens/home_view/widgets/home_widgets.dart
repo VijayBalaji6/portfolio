@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/constants/asserts_constants.dart';
+import 'package:portfolio/services/services.dart';
 import 'package:portfolio/styles/app_styles.dart';
 import 'package:portfolio/themes/app_colors.dart';
 import 'package:portfolio/views/screens/home_view/widgets/social_contact.dart';
@@ -9,8 +10,9 @@ import 'package:portfolio/views/screens/home_view/widgets/social_contact.dart';
 class HomeWidgets {
   static Row buildSocialContact() => Row(
         children: [
-          const HomeSocialContactButton(
+          HomeSocialContactButton(
             assetIcon: SocialIconAssets.mailImage,
+            onTap: () => Services.sendEmail(),
           ),
           SizedBox(
             width: 0.01.sw,
@@ -54,7 +56,7 @@ class HomeWidgets {
         ],
       );
 
-  static ElevatedButton buildHomeWelcomeButtons(
+  static ElevatedButton buildResumeButton(
           {required void Function()? tapAction,
           required String buttonName,
           required IconData buttonIcon}) =>
@@ -68,7 +70,7 @@ class HomeWidgets {
             children: [
               Text(
                 buttonName,
-                style: AppStyles.resumeButtonStyle,
+                style: AppStyles.displayMedium,
               ),
               SizedBox(
                 width: .01.sw,
@@ -82,21 +84,9 @@ class HomeWidgets {
         ),
       );
 
-  static Row homeActionButtons() => Row(
-        children: [
-          buildHomeWelcomeButtons(
-            tapAction: () {},
-            buttonName: HomeConstants.sayHello,
-            buttonIcon: Icons.arrow_circle_right_outlined,
-          ),
-          SizedBox(
-            width: 0.01.sw,
-          ),
-          buildHomeWelcomeButtons(
-            tapAction: () {},
-            buttonName: HomeConstants.resume,
-            buttonIcon: Icons.download_outlined,
-          ),
-        ],
+  static ElevatedButton resumeHomeButton() => buildResumeButton(
+        tapAction: null,
+        buttonName: HomeConstants.resume,
+        buttonIcon: Icons.download_outlined,
       );
 }
