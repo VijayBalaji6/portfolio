@@ -59,7 +59,7 @@ class DetailsView extends StatelessWidget {
               color: AppColors.orange,
               borderRadius: BorderRadius.all(Radius.circular(25))),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(10.0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
