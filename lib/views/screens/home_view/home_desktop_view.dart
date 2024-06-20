@@ -19,7 +19,7 @@ class HomeDesktopView extends StatelessWidget {
         SizedBox(
           height: 0.03.sh,
         ),
-        HomeWidgets.homeActionButtons()
+        HomeWidgets.resumeHomeButton()
       ],
     );
   }

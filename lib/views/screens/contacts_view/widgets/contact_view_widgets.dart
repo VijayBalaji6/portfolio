@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/constants/asserts_constants.dart';
+import 'package:portfolio/services/services.dart';
 import 'package:portfolio/styles/app_styles.dart';
 import 'package:portfolio/views/screens/contacts_view/widgets/social_media_button.dart';
 
@@ -17,6 +18,7 @@ class ContactViewWidgets {
             assetIcon: SocialIconAssets.mailImage,
             socialName: SocialContact.mail,
             mobileView: isMobileView,
+            onTap: () => Services.sendEmail(),
           ),
           SocialMediaButton(
             assetIcon: SocialIconAssets.linkedInImage,
