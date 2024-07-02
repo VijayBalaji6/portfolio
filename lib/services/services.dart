@@ -30,7 +30,7 @@ class Services {
       await launchUrl(Uri.parse(ContactConstants.telegramURL),
           mode: LaunchMode.externalApplication);
     } catch (e) {
-      throw 'Could not launch Linked In';
+      throw 'Could not launch Telegram';
     }
   }
 
@@ -39,7 +39,7 @@ class Services {
       await launchUrl(Uri.parse(ContactConstants.whatsappURL),
           mode: LaunchMode.externalApplication);
     } catch (e) {
-      throw 'Could not launch Linked In';
+      throw 'Could not launch Linked';
     }
   }
 

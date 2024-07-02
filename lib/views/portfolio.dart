@@ -7,6 +7,7 @@ import 'package:portfolio/views/screens/about_view/about.dart';
 import 'package:portfolio/views/screens/contacts_view/contact_view.dart';
 import 'package:portfolio/views/screens/details_view/details_view.dart';
 import 'package:portfolio/views/screens/home_view/home_view.dart';
+import 'package:portfolio/views/screens/skills_view/skills_view.dart';
 import 'package:portfolio/views/screens/work_view/work_view.dart';
 
 class PortFolio extends StatelessWidget {
@@ -30,6 +31,7 @@ class PortFolio extends StatelessWidget {
             AboutView(
               key: aboutViewKey,
             ),
+            const SkillsView(),
             WorkView(
               key: workViewKey,
             ),

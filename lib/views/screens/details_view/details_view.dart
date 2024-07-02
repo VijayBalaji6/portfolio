@@ -26,28 +26,28 @@ class DetailsView extends StatelessWidget {
           children: [
             detailsIcons(
               name: 'Flutter',
-              assertName: AboutAssets.flutterImage,
+              assertName: SkillAssets.flutterImage,
             ),
             const SizedBox(
               width: 15,
             ),
             detailsIcons(
               name: 'Firebase',
-              assertName: AboutAssets.firebaseImage,
+              assertName: SkillAssets.firebaseImage,
             ),
             const SizedBox(
               width: 15,
             ),
             detailsIcons(
               name: 'Github-Actions',
-              assertName: AboutAssets.githubImage,
+              assertName: SkillAssets.gitHubImage,
             ),
             const SizedBox(
               width: 15,
             ),
             detailsIcons(
               name: 'Figma',
-              assertName: AboutAssets.figmaImage,
+              assertName: SkillAssets.figmaImage,
             ),
           ],
         ),
