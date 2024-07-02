@@ -24,21 +24,19 @@ class ContactViewWidgets {
             assetIcon: SocialIconAssets.linkedInImage,
             socialName: SocialContact.linkedIn,
             mobileView: isMobileView,
-          ),
-          SocialMediaButton(
-            assetIcon: SocialIconAssets.instagramImage,
-            socialName: SocialContact.instagram,
-            mobileView: isMobileView,
+            onTap: () => Services.openLinkedIn(),
           ),
           SocialMediaButton(
             assetIcon: SocialIconAssets.telegramImage,
             socialName: SocialContact.telegram,
             mobileView: isMobileView,
+            onTap: () => Services.openTelegramApp(),
           ),
           SocialMediaButton(
             assetIcon: SocialIconAssets.whatsappImage,
             socialName: SocialContact.whatsapp,
             mobileView: isMobileView,
+            onTap: () => Services.openWhatsApp(),
           ),
         ],
       );
