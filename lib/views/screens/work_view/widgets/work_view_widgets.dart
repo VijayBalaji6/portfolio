@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/services/services.dart';
 import 'package:portfolio/styles/app_styles.dart';
 
 class WorkViewWidgets {
@@ -6,7 +7,7 @@ class WorkViewWidgets {
       Text("Explore My Latest works", style: AppStyles.headlineMedium);
 
   static Widget seeProjectsButton() => ElevatedButton(
-      onPressed: null,
+      onPressed: () => Services.openGitHub(),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

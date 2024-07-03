@@ -9,4 +9,5 @@ class AppColors {
   static const Color pink = Colors.pink;
   static const Color blue = Colors.blue;
   static const Color pinkAccent = Colors.pinkAccent;
+  static const Color lightGrey = Color.fromARGB(255, 113, 150, 168);
 }

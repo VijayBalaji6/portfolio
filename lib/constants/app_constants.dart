@@ -28,3 +28,12 @@ class HomeConstants {
   static const String resume = "Download CV";
   static const String sayHello = "Say Hello";
 }
+
+class ContactConstants {
+  static const mailId = 'nvbalaji6@gmail.com';
+  static const linedInProfile =
+      'https://www.linkedin.com/in/vijay-balaji-b98a69218/';
+  static String telegramURL = "https://t.me/nvbalaji6";
+  static String whatsappURL = "whatsapp://send?phone=+918248419066";
+  static String gitHubURL = "https://github.com/VijayBalaji6?tab=repositories";
+}

@@ -17,8 +17,9 @@ class HomeWidgets {
           SizedBox(
             width: 0.01.sw,
           ),
-          const HomeSocialContactButton(
+          HomeSocialContactButton(
             assetIcon: SocialIconAssets.linkedInImage,
+            onTap: () => Services.openLinkedIn(),
           ),
         ],
       );
@@ -61,7 +62,7 @@ class HomeWidgets {
           required String buttonName,
           required IconData buttonIcon}) =>
       ElevatedButton(
-        onPressed: null,
+        onPressed: tapAction,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -85,7 +86,7 @@ class HomeWidgets {
       );
 
   static ElevatedButton resumeHomeButton() => buildResumeButton(
-        tapAction: null,
+        tapAction: () => Services.downloadFile(),
         buttonName: HomeConstants.resume,
         buttonIcon: Icons.download_outlined,
       );
