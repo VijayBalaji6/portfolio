@@ -6,7 +6,7 @@ import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/firebase_options.dart';
 import 'package:portfolio/providers/theme_notifier.dart';
 import 'package:portfolio/themes/app_theme.dart';
-import 'package:portfolio/views/portfolio.dart';
+import 'package:portfolio/views/splash/splash_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +28,7 @@ class MyApp extends ConsumerWidget {
         title: AppConstants.appName,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.getAppTheme(context, ref.watch(themeProvider)),
-        home: const PortFolio(),
+        home: const SplashView(),
       ),
     );
   }
