@@ -43,6 +43,15 @@ class Services {
     }
   }
 
+  static Future<void> openGitHub() async {
+    try {
+      await launchUrl(Uri.parse(ContactConstants.gitHubURL),
+          mode: LaunchMode.externalApplication);
+    } catch (e) {
+      throw 'Could not launch Linked';
+    }
+  }
+
   static Future<void> downloadFile() async {
     try {
       String downloadURL = await FirebaseStorage.instance

@@ -3,22 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:portfolio/constants/asserts_constants.dart';
 import 'package:portfolio/views/screens/skills_view/widgets/skills_widgets.dart';
 
-List<String> skillAssertList = [
-  SkillAssets.dartImage,
-  SkillAssets.pythonImage,
-  SkillAssets.javaScriptImage,
-  SkillAssets.gitImage,
-  SkillAssets.flutterImage,
-  SkillAssets.angularImage,
-  SkillAssets.firebaseImage,
-  SkillAssets.supabaseImage,
-  SkillAssets.postgresImage,
-  SkillAssets.htmlImage,
-  SkillAssets.cssImage,
-  SkillAssets.figmaImage,
-  SkillAssets.canvaImage,
-];
-
 class SkillsView extends StatelessWidget {
   const SkillsView({super.key});
 
@@ -26,19 +10,85 @@ class SkillsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SkillsWidget.skillsTitle(),
-        GridView.builder(
-            shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              childAspectRatio: 5,
-              mainAxisSpacing: 1.0,
-              crossAxisSpacing: 1.0,
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.dartImage,
+              skillName: 'Dart',
             ),
-            itemCount: skillAssertList.length,
-            itemBuilder: (BuildContext context, int index) =>
-                SkillsWidget.techSkillWidget(skillName: skillAssertList[index]))
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.javaScriptImage,
+              skillName: 'JavaScript',
+            ),
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.pythonImage,
+              skillName: 'Python',
+            ),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.flutterImage,
+              skillName: 'Flutter',
+            ),
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.gitImage,
+              skillName: 'Git',
+            ),
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.angularImage,
+              skillName: 'Angular',
+            ),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.firebaseImage,
+              skillName: 'Firebase',
+            ),
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.supabaseImage,
+              skillName: 'Supabase',
+            ),
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.postgresImage,
+              skillName: 'Postgres',
+            ),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.htmlImage,
+              skillName: 'HTML',
+            ),
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.cssImage,
+              skillName: 'CSS',
+            ),
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.figmaImage,
+              skillName: 'Figma',
+            ),
+            SkillsWidget.techSkillWidget(
+              skillAssetName: SkillAssets.canvaImage,
+              skillName: 'Canva',
+            ),
+          ],
+        ),
       ],
     );
   }
