@@ -1,93 +1,40 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:portfolio/constants/asserts_constants.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/models/skills.dart';
+import 'package:portfolio/providers/network_provider/skill_provider.dart';
 import 'package:portfolio/views/screens/skills_view/widgets/skills_widgets.dart';
+import 'package:portfolio/views/screens/skills_view/widgets/tech_skill_widget.dart';
 
-class SkillsView extends StatelessWidget {
+class SkillsView extends ConsumerWidget {
   const SkillsView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final skillProvider = ref.watch(skillFutureProvider);
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SkillsWidget.skillsTitle(),
-        Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.dartImage,
-              skillName: 'Dart',
+        skillProvider.when(
+          loading: () => const CircularProgressIndicator(),
+          error: (err, stack) => const Text("Error loading Skills"),
+          data: (List<Skill> skills) => GridView.builder(
+            shrinkWrap: true,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 7,
+              mainAxisSpacing: 25.0,
+              crossAxisSpacing: 20.0,
+              childAspectRatio: 2.5,
+              mainAxisExtent: 125,
             ),
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.javaScriptImage,
-              skillName: 'JavaScript',
+            itemCount: skills.length,
+            itemBuilder: (BuildContext context, int index) => TechSkillWidget(
+              skillAssetName: skills[index].skillImg,
+              skillName: skills[index].skillName,
             ),
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.pythonImage,
-              skillName: 'Python',
-            ),
-          ],
-        ),
-        Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.flutterImage,
-              skillName: 'Flutter',
-            ),
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.gitImage,
-              skillName: 'Git',
-            ),
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.angularImage,
-              skillName: 'Angular',
-            ),
-          ],
-        ),
-        Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.firebaseImage,
-              skillName: 'Firebase',
-            ),
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.supabaseImage,
-              skillName: 'Supabase',
-            ),
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.postgresImage,
-              skillName: 'Postgres',
-            ),
-          ],
-        ),
-        Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.htmlImage,
-              skillName: 'HTML',
-            ),
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.cssImage,
-              skillName: 'CSS',
-            ),
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.figmaImage,
-              skillName: 'Figma',
-            ),
-            SkillsWidget.techSkillWidget(
-              skillAssetName: SkillAssets.canvaImage,
-              skillName: 'Canva',
-            ),
-          ],
+          ),
         ),
       ],
     );
