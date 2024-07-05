@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -27,29 +28,30 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>portfolio</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
   <script src="flutter_bootstrap.js" async></script>
+  <script type="text/javascript">
+    window.flutterWebRenderer = "html";
+  </script>
   <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+
     const firebaseConfig = {
-      apiKey: "AIzaSyDciRtwPLO6JTjpyhLGEdhlfwgESbdPa7M",
-      authDomain: "portfolio-vijaybalaji.firebaseapp.com",
-      projectId: "portfolio-vijaybalaji",
-      storageBucket: "portfolio-vijaybalaji.appspot.com",
-      messagingSenderId: "519669784004",
-      appId: "1:519669784004:web:6a77a0ca81a396c847d891",
-      measurementId: "G-VK4ZWKCTL2"
+      apiKey: "AIzaSyC-MTZB5n25yHtJykuCaEODCMxl-R447Cw",
+      authDomain: "vijay-balaji-portfolio.firebaseapp.com",
+      projectId: "vijay-balaji-portfolio",
+      storageBucket: "vijay-balaji-portfolio.appspot.com",
+      messagingSenderId: "316440346057",
+      appId: "1:316440346057:web:88eb14b61cfe771d6abc18",
+      measurementId: "G-KED5RDVHJW"
     };
 
     // Initialize Firebase
@@ -57,4 +59,5 @@
     const analytics = getAnalytics(app);
   </script>
 </body>
+
 </html>

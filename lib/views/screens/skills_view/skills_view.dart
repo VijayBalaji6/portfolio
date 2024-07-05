@@ -31,7 +31,6 @@ class SkillsView extends ConsumerWidget {
             ),
             itemCount: skills.length,
             itemBuilder: (BuildContext context, int index) => TechSkillWidget(
-              skillAssetName: skills[index].skillImg,
               skillName: skills[index].skillName,
             ),
           ),
