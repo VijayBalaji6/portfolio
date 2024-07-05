@@ -21,8 +21,10 @@ dependencies:
   flutter_svg: ^2.0.10+1
   url_launcher: ^6.3.0
   web: ^0.5.1
- 
+  image_network: ^2.5.6
+  shimmer: ^3.0.0
 
+ 
 
 dev_dependencies:
   flutter_test:
