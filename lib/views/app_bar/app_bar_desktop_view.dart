@@ -17,6 +17,8 @@ GlobalKey getCurrentViewKey(String titleKey) {
   switch (titleKey) {
     case AppTitles.about:
       return aboutViewKey;
+    case AppTitles.skills:
+      return skillsViewKey;
     case AppTitles.work:
       return workViewKey;
     case AppTitles.contact:
@@ -44,7 +46,7 @@ class AppBarDesktopView extends StatelessWidget {
   }
 
   Widget builtName() => Text(
-        AppTitles.userName,
+        HomeConstants.userName,
         style: AppStyles.headlineMedium,
       );
 
@@ -84,7 +86,7 @@ class AppBarDesktopView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            AppTitles.light,
+            ThemeName.light,
             style: AppStyles.themeSwitcherTitleStyle,
           ),
           Consumer(
@@ -98,7 +100,7 @@ class AppBarDesktopView extends StatelessWidget {
             },
           ),
           Text(
-            AppTitles.dark,
+            ThemeName.dark,
             style: AppStyles.themeSwitcherTitleStyle,
           )
         ],
