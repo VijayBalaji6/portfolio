@@ -1,9 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/models/skills.dart';
 import 'package:portfolio/providers/network_provider/skill_provider.dart';
-import 'package:portfolio/views/screens/skills_view/widgets/skills_widgets.dart';
+import 'package:portfolio/views/common_widgets/page_titles.dart';
 import 'package:portfolio/views/screens/skills_view/widgets/tech_skill_widget.dart';
 
 class SkillsView extends ConsumerWidget {
@@ -16,7 +16,9 @@ class SkillsView extends ConsumerWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SkillsWidget.skillsTitle(),
+        const PageTitles(
+          title: AppTitles.skills,
+        ),
         skillProvider.when(
           loading: () => const CircularProgressIndicator(),
           error: (err, stack) => const Text("Error loading Skills"),
