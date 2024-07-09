@@ -28,17 +28,32 @@ class PortFolio extends StatelessWidget {
             HomeView(
               key: homeViewKey,
             ),
+            const SizedBox(
+              height: 30,
+            ),
             AboutView(
               key: aboutViewKey,
+            ),
+            const SizedBox(
+              height: 30,
             ),
             SkillsView(
               key: skillsViewKey,
             ),
+            const SizedBox(
+              height: 30,
+            ),
             WorkView(
               key: workViewKey,
             ),
+            const SizedBox(
+              height: 30,
+            ),
             ContactView(
               key: contactViewKey,
+            ),
+            const SizedBox(
+              height: 30,
             ),
             const DetailsView()
           ],

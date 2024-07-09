@@ -19,23 +19,33 @@ class SkillsView extends ConsumerWidget {
         const PageTitles(
           title: AppTitles.skills,
         ),
+        const SizedBox(
+          height: 10,
+        ),
         skillProvider.when(
           loading: () => const CircularProgressIndicator(),
           error: (err, stack) => const Text("Error loading Skills"),
-          data: (List<Skill> skills) => GridView.builder(
-            shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 7,
-              mainAxisSpacing: 25.0,
-              crossAxisSpacing: 20.0,
-              childAspectRatio: 2.5,
-              mainAxisExtent: 125,
-            ),
-            itemCount: skills.length,
-            itemBuilder: (BuildContext context, int index) => TechSkillWidget(
-              skillName: skills[index].skillName,
-            ),
-          ),
+          data: (List<Skill> skills) {
+            final screenWidth = MediaQuery.of(context).size.width;
+            return GridView.builder(
+              shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: screenWidth > 800
+                    ? (screenWidth > 800 && screenWidth < 1200)
+                        ? 4
+                        : 7
+                    : 3,
+                mainAxisSpacing: 25.0,
+                crossAxisSpacing: 20.0,
+                childAspectRatio: 2.5,
+                mainAxisExtent: 125,
+              ),
+              itemCount: skills.length,
+              itemBuilder: (BuildContext context, int index) => TechSkillWidget(
+                skillName: skills[index].skillName,
+              ),
+            );
+          },
         ),
       ],
     );
