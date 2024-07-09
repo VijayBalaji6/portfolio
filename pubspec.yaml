@@ -38,9 +38,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/splash/
-    - assets/main/
     - assets/home/
-    - assets/work/
     - assets/contact/
 
 

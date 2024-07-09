@@ -18,7 +18,7 @@ class TechSkillWidget extends StatelessWidget {
       Reference ref = FirebaseStorage.instance
           .ref()
           .child('skills')
-          .child('$skillName.png');
+          .child('$skillName.svg');
       var url = await ref.getDownloadURL();
       return url;
     } catch (e) {

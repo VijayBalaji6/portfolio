@@ -42,7 +42,7 @@ class WebsiteBuildWithWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 ImageNetwork(
-                  onLoading: const SizedBox(),
+                  onLoading: const CircularProgressIndicator(),
                   image: snapShot.data.toString(),
                   height: 50,
                   width: 50,
