@@ -21,17 +21,15 @@ class AppBarDrawer extends StatelessWidget {
             itemCount: views.length,
             itemBuilder: (context, index) {
               final String currentTitle = views[index];
+              final bool isCurrentSelected =
+                  currentSelectedPage == currentTitle;
               return ListTile(
                 leading: Icon(drawerIcons[index],
                     size: 25,
-                    color: currentSelectedPage == currentTitle
-                        ? AppColors.orange
-                        : null),
+                    color: isCurrentSelected ? AppColors.orange : null),
                 title: Text(currentTitle,
                     style: AppStyles.titleMedium.copyWith(
-                        color: currentSelectedPage == currentTitle
-                            ? AppColors.orange
-                            : null)),
+                        color: isCurrentSelected ? AppColors.orange : null)),
                 onTap: () {
                   scrollSection(sectionKey: getCurrentViewKey(currentTitle));
                   ref

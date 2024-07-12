@@ -20,6 +20,7 @@ final GlobalKey contactViewKey = GlobalKey();
 final List<IconData> drawerIcons = [
   Icons.home,
   Icons.person,
+  Icons.android,
   Icons.work,
   Icons.contact_page,
 ];

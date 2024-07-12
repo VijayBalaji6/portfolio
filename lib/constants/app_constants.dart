@@ -1,3 +1,5 @@
+import 'package:portfolio/models/projects.dart';
+
 class AppConstants {
   static const String appName = "Vijay Balaji's Portfolio";
 }
@@ -42,3 +44,13 @@ class ContactConstants {
   static String whatsappURL = "whatsapp://send?phone=+918248419066";
   static String gitHubURL = "https://github.com/VijayBalaji6";
 }
+
+final List<Project> projects = [
+  Project(projectName: 'Todo book', projectDescription: ''),
+  Project(projectName: 'Weather Buddy', projectDescription: ''),
+  Project(projectName: 'Tetrix', projectDescription: ''),
+  Project(projectName: 'SSK Admin', projectDescription: ''),
+  Project(projectName: 'SSK Buddy', projectDescription: ''),
+  Project(projectName: 'SSK', projectDescription: ''),
+  Project(projectName: 'Smart Home Automation', projectDescription: ''),
+];

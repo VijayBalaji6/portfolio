@@ -13,7 +13,7 @@ class ResponsiveLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    if (screenWidth >= 800) {
+    if (screenWidth >= 900) {
       return desktop;
     } else {
       return mobile;
