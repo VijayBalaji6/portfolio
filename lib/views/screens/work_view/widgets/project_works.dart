@@ -15,9 +15,9 @@ class ProjectWorks extends StatelessWidget {
     return GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: isMobile ? 1 : 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          childAspectRatio: isMobile ? 1.5 : 0.8,
+          crossAxisSpacing: 50,
+          mainAxisSpacing: 20,
+          childAspectRatio: 1.5,
         ),
         shrinkWrap: true,
         itemCount: projects.length,
@@ -35,7 +35,7 @@ class ProjectWorks extends StatelessWidget {
                   color: AppColors.blue,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                height: 0.5.sw,
+                height: 0.25.sw,
                 width: 1.sw,
               ),
               SizedBox(

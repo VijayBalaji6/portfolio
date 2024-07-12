@@ -29,6 +29,7 @@ class SkillsView extends ConsumerWidget {
             final screenWidth = MediaQuery.of(context).size.width;
             return GridView.builder(
               shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: screenWidth > 800
                     ? (screenWidth > 800 && screenWidth < 1200)
