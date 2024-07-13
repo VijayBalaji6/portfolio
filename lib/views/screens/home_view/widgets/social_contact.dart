@@ -1,6 +1,6 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HomeSocialContactButton extends StatelessWidget {
   const HomeSocialContactButton({
@@ -16,7 +16,7 @@ class HomeSocialContactButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(20.sp),
-      child: Image.asset(
+      child: SvgPicture.asset(
         assetIcon,
         height: 35,
         width: 35,

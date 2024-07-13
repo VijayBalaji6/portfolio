@@ -1,8 +1,8 @@
 class WebsiteBuildWith {
   String techName;
-  int position;
+  String techAssert;
   WebsiteBuildWith({
     required this.techName,
-    required this.position,
+    required this.techAssert,
   });
 }
