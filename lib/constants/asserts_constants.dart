@@ -7,33 +7,36 @@ class HomeAssets {
 }
 
 class SkillAssets {
-  static const String dartImage = 'assets/about/dart.png';
-  static const String pythonImage = 'assets/about/python.png';
-  static const String javaScriptImage = 'assets/about/java_script.png';
+  static const String dartImage = 'assets/skills/dart.svg';
+  static const String pythonImage = 'assets/skills/python.svg';
+  static const String typeImage = 'assets/skills/typescript.svg';
 
-  static const String htmlImage = 'assets/about/html.png';
-  static const String cssImage = 'assets/about/css.png';
+  static const String htmlImage = 'assets/skills/html.svg';
+  static const String cssImage = 'assets/skills/css.svg';
+  static const String gitImage = 'assets/skills/git.svg';
 
-  static const String gitImage = 'assets/about/git.png';
-  static const String gitHubImage = 'assets/about/github.png';
-  static const String flutterImage = 'assets/about/flutter.png';
-  static const String angularImage = 'assets/about/angular.png';
+  static const String flutterImage = 'assets/skills/flutter.svg';
+  static const String angularImage = 'assets/skills/angular.svg';
 
-  static const String flutterBirdImage = 'assets/about/flutter_bird.png';
-  static const String canvaImage = 'assets/about/canva.png';
-  static const String figmaImage = 'assets/about/figma.png';
+  static const String canvaImage = 'assets/skills/canva.svg';
+  static const String figmaImage = 'assets/skills/figma.svg';
 
-  static const String firebaseImage = 'assets/about/firebase.png';
-  static const String supabaseImage = 'assets/about/supabase.png';
-  static const String postgresImage = 'assets/about/postgresql.png';
-
-  static const String postmanImage = 'assets/about/postman.png';
+  static const String firebaseImage = 'assets/skills/firebase.svg';
+  static const String supabaseImage = 'assets/skills/supabase.svg';
+  static const String postgresImage = 'assets/skills/postgresql.svg';
+  static const String postmanImage = 'assets/skills/postman.svg';
 }
 
 class SocialIconAssets {
-  static const String mailImage = 'assets/contact/mail.png';
-  static const String instagramImage = 'assets/contact/instagram.png';
-  static const String telegramImage = 'assets/contact/telegram.png';
-  static const String whatsappImage = 'assets/contact/whatsapp.png';
-  static const String linkedInImage = 'assets/contact/linkedin.png';
+  static const String mailImage = 'assets/contact/mail.svg';
+  static const String telegramImage = 'assets/contact/telegram.svg';
+  static const String whatsappImage = 'assets/contact/whatsapp.svg';
+  static const String linkedInImage = 'assets/contact/linkedin.svg';
+}
+
+class WebsiteBuildWithAssets {
+  static const String flutterImage = 'assets/skills/flutter.svg';
+  static const String gitHubImage = 'assets/skills/github.svg';
+  static const String firebaseImage = 'assets/skills/firebase.svg';
+  static const String figmaImage = 'assets/skills/figma.svg';
 }
