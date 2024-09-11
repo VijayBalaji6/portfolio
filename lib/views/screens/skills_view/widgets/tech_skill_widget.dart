@@ -15,27 +15,31 @@ class TechSkillWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      backgroundColor: AppColors.lightGrey,
-      radius: 75,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SvgPicture.asset(
-            techSkill.skillAssert,
-            height: 50,
-            width: 50,
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Text(
-            techSkill.skillName.toCapitalized(),
-            style: const TextStyle(fontSize: 18, color: AppColors.white),
-          )
-        ],
-      ),
-    );
+    return Container(
+        // width: radius * 2,
+        // height: radius * 2,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: AppColors.lightGrey,
+          border: Border.all(color: AppColors.lightGrey, width: 2.0),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              techSkill.skillAssert,
+              fit: BoxFit.cover,
+              // height: 50,
+              // width: 50,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              techSkill.skillName.toCapitalized(),
+              style: const TextStyle(color: AppColors.white),
+            )
+          ],
+        ));
   }
 }

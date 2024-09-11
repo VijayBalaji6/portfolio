@@ -14,14 +14,16 @@ class ProjectWorks extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       final bool isMobile = constraints.maxWidth < 600;
 
-      return ListView.separated(
+      return GridView.builder(
           shrinkWrap: true,
           itemCount: projects.length,
           scrollDirection: Axis.vertical,
           physics: const NeverScrollableScrollPhysics(),
-          separatorBuilder: (context, index) => SizedBox(
-                height: 0.02.sw,
-              ),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 5,
+              childAspectRatio: isMobile ? 1.5 : 1.25,
+              crossAxisCount: isMobile ? 1 : 2),
           itemBuilder: (BuildContext context, int index) {
             final Project currentProject = projects[index];
             return Column(
@@ -29,13 +31,13 @@ class ProjectWorks extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: AppColors.blue,
-                    borderRadius: BorderRadius.circular(20),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.blue,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                   ),
-                  height: isMobile ? 0.25.sh : 0.5.sh,
-                  width: isMobile ? 1.sw : .5.sw,
                 ),
                 SizedBox(
                   height: 0.01.sw,
