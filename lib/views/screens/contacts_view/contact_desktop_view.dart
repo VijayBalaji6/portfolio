@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/views/screens/contacts_view/widgets/contact_view_widgets.dart';
 
 class ContactDesktopView extends StatelessWidget {
@@ -10,9 +9,7 @@ class ContactDesktopView extends StatelessWidget {
     return Column(
       children: [
         ContactViewWidgets.contactMe(),
-        SizedBox(
-          height: 0.03.sh,
-        ),
+        SizedBox(height: 30),
         ContactViewWidgets.socialContactView(isMobileView: false),
       ],
     );

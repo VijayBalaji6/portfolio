@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/app_constants.dart';
 
-List<String> views = [
+const List<String> views = [
   AppTitles.home,
   AppTitles.about,
   AppTitles.skills,
@@ -17,7 +17,7 @@ final GlobalKey skillsViewKey = GlobalKey();
 final GlobalKey workViewKey = GlobalKey();
 final GlobalKey contactViewKey = GlobalKey();
 
-final List<IconData> drawerIcons = [
+const List<IconData> drawerIcons = [
   Icons.home,
   Icons.person,
   Icons.android,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:flutter_svg/svg.dart';
 
 class HomeSocialContactButton extends StatelessWidget {
@@ -15,7 +15,7 @@ class HomeSocialContactButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(20.sp),
+      borderRadius: BorderRadius.circular(20),
       child: SvgPicture.asset(
         assetIcon,
         height: 35,

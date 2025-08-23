@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/views/screens/contacts_view/widgets/contact_view_widgets.dart';
 
 class ContactMobileView extends StatelessWidget {
@@ -11,7 +10,7 @@ class ContactMobileView extends StatelessWidget {
       children: [
         ContactViewWidgets.contactMe(),
         SizedBox(
-          height: 0.03.sh,
+          height: 30,
         ),
         ContactViewWidgets.socialContactView(isMobileView: true),
       ],

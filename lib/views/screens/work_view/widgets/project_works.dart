@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/models/projects.dart';
 import 'package:portfolio/styles/app_styles.dart';
@@ -30,6 +30,7 @@ class ProjectWorks extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
+              spacing: 10,
               children: [
                 Expanded(
                   child: Container(
@@ -38,9 +39,6 @@ class ProjectWorks extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 0.01.sw,
                 ),
                 Text(
                   currentProject.projectName,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/constants/asserts_constants.dart';
 import 'package:portfolio/services/services.dart';
@@ -9,13 +9,11 @@ import 'package:portfolio/views/screens/home_view/widgets/social_contact.dart';
 
 class HomeWidgets {
   static Row buildSocialContact() => Row(
+        spacing: 10,
         children: [
           HomeSocialContactButton(
             assetIcon: SocialIconAssets.mailImage,
             onTap: () => Services.sendEmail(),
-          ),
-          SizedBox(
-            width: 0.01.sw,
           ),
           HomeSocialContactButton(
             assetIcon: SocialIconAssets.linkedInImage,
@@ -26,6 +24,7 @@ class HomeWidgets {
 
   static Column buildWelcomeNote() => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 30,
         children: [
           Row(
             children: [
@@ -40,15 +39,9 @@ class HomeWidgets {
               ),
             ],
           ),
-          SizedBox(
-            height: 0.03.sh,
-          ),
           Text(
             HomeConstants.welcomeHeader,
             style: AppStyles.titleLarge,
-          ),
-          SizedBox(
-            height: 0.03.sh,
           ),
           Text(
             HomeConstants.welcomeNote,
@@ -68,17 +61,15 @@ class HomeWidgets {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
+            spacing: 10,
             children: [
               Text(
                 buttonName,
                 style: AppStyles.displayMedium,
               ),
-              SizedBox(
-                width: .01.sw,
-              ),
               Icon(
                 buttonIcon,
-                size: 7.sp,
+                size: 7,
               )
             ],
           ),

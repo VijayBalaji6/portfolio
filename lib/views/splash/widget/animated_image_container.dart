@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/constants/asserts_constants.dart';
 import 'package:portfolio/themes/app_colors.dart';
 
@@ -11,9 +10,9 @@ class AnimatedImageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 0.25.sh,
-      width: 0.25.sh,
-      padding: EdgeInsets.all(0.001.sh),
+      height: 25,
+      width: 25,
+      padding: EdgeInsets.all(30),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         gradient: const LinearGradient(colors: [
@@ -41,8 +40,8 @@ class AnimatedImageContainer extends StatelessWidget {
         ),
         child: Image.asset(
           Assets.splashImage,
-          height: 0.2.sh,
-          width: 0.2.sh,
+          height: 20,
+          width: 20,
         ),
       ),
     );

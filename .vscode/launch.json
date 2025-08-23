@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "portfolio",
+            "name": "portfolio (Debug mode)",
             "request": "launch",
             "type": "dart",
-            "args": ["-d", "chrome", "--web-renderer", "html"]
+            "flutterMode": "debug",
         },
         {
             "name": "portfolio (profile mode)",

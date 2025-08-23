@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio/constants/app_gloabls.dart';
+import 'package:portfolio/constants/app_globals.dart';
 import 'package:portfolio/providers/nav_notifier.dart';
 import 'package:portfolio/styles/app_styles.dart';
 import 'package:portfolio/themes/app_colors.dart';

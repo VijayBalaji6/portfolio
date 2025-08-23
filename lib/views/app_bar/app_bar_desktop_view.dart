@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/constants/app_constants.dart';
-import 'package:portfolio/constants/app_gloabls.dart';
+import 'package:portfolio/constants/app_globals.dart';
 import 'package:portfolio/providers/nav_notifier.dart';
 import 'package:portfolio/providers/theme_notifier.dart';
 import 'package:portfolio/styles/app_styles.dart';
@@ -73,7 +72,7 @@ class AppBarDesktopView extends StatelessWidget {
                                       : null)),
                         ),
                         SizedBox(
-                          width: .02.sw,
+                          width: 20,
                         ),
                       ],
                     ))

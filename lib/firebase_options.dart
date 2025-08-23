@@ -41,11 +41,13 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-      apiKey: "AIzaSyC-MTZB5n25yHtJykuCaEODCMxl-R447Cw",
-      authDomain: "vijay-balaji-portfolio.firebaseapp.com",
-      projectId: "vijay-balaji-portfolio",
-      storageBucket: "vijay-balaji-portfolio.appspot.com",
-      messagingSenderId: "316440346057",
-      appId: "1:316440346057:web:d7a796c09d5d5a856abc18",
-      measurementId: "G-8JD4NZDRVV");
+    apiKey: 'AIzaSyDciRtwPLO6JTjpyhLGEdhlfwgESbdPa7M',
+    appId: '1:519669784004:web:6a77a0ca81a396c847d891',
+    messagingSenderId: '519669784004',
+    projectId: 'portfolio-vijaybalaji',
+    authDomain: 'portfolio-vijaybalaji.firebaseapp.com',
+    storageBucket: 'portfolio-vijaybalaji.appspot.com',
+    measurementId: 'G-VK4ZWKCTL2',
+  );
+
 }
