@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio/constants/app_gloabls.dart';
+import 'package:portfolio/constants/app_globals.dart';
 import 'package:portfolio/views/app_bar/portfolio_floating_app_bar.dart';
 import 'package:portfolio/views/drawer/app_bar_drawer.dart';
 import 'package:portfolio/views/screens/about_view/about_view.dart';
@@ -21,37 +20,22 @@ class PortFolio extends StatelessWidget {
       appBar: const PortFolioFloatingAppBar(),
       body: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 0.05.sw, vertical: 0.03.sh),
-        child: Column(mainAxisSize: MainAxisSize.min, children: [
+        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+        child: Column(mainAxisSize: MainAxisSize.min, spacing: 30, children: [
           HomeView(
             key: homeViewKey,
-          ),
-          const SizedBox(
-            height: 30,
           ),
           AboutView(
             key: aboutViewKey,
           ),
-          const SizedBox(
-            height: 30,
-          ),
           SkillsView(
             key: skillsViewKey,
-          ),
-          const SizedBox(
-            height: 30,
           ),
           WorkView(
             key: workViewKey,
           ),
-          const SizedBox(
-            height: 30,
-          ),
           ContactView(
             key: contactViewKey,
-          ),
-          const SizedBox(
-            height: 30,
           ),
           const DetailsView()
         ]),

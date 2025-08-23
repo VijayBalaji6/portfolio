@@ -1,5 +1,5 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/constants/app_constants.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 class NavNotifier extends Notifier<String> {
   NavNotifier();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio/constants/app_gloabls.dart';
+import 'package:portfolio/constants/app_globals.dart';
 import 'package:portfolio/providers/theme_notifier.dart';
 
 class AppBarMobileView extends StatelessWidget {

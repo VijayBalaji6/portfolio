@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/styles/app_styles.dart';
 import 'package:portfolio/themes/app_colors.dart';
@@ -15,32 +14,19 @@ class DetailsView extends StatelessWidget {
   ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
+      spacing: 30,
       children: [
         const PageTitles(
           title: WebsiteBuiltWith.websiteBuildWith,
         ),
-        const SizedBox(
-          height: 10,
-        ),
-        SizedBox(
-          height: .15.sh,
-          child: LayoutBuilder(
-              builder: (BuildContext context, BoxConstraints constrains) {
-            return ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: websiteBuildWith.length,
-              separatorBuilder: (context, index) => const SizedBox(width: 20),
-              itemBuilder: (BuildContext context, int index) =>
-                  WebsiteBuildWithWidget(
-                techDetail: websiteBuildWith[index],
-              ),
-            );
-          }),
-        ),
-        const SizedBox(
-          height: 10,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: 30,
+          children: websiteBuildWith.map((techDetail) {
+            return WebsiteBuildWithWidget(techDetail: techDetail);
+          }).toList(),
         ),
         Container(
           decoration: const BoxDecoration(

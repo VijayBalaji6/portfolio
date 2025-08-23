@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:portfolio/views/screens/work_view/widgets/project_works.dart';
 import 'package:portfolio/views/screens/work_view/widgets/work_view_widgets.dart';
 
@@ -12,6 +12,7 @@ class WorkView extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 30,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -21,14 +22,8 @@ class WorkView extends StatelessWidget {
           ],
         ),
         if (isMobile) ...[
-          SizedBox(
-            height: 0.03.sh,
-          ),
           WorkViewWidgets.seeProjectsButton(),
         ],
-        SizedBox(
-          height: 0.03.sh,
-        ),
         const ProjectWorks(),
       ],
     );
