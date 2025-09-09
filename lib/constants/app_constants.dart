@@ -80,12 +80,12 @@ class WebsiteBuiltWith {
 // List items
 
 final List<Project> projects = [
-  Project(projectName: 'Todo book', projectDescription: ''),
-  Project(projectName: 'Weather Buddy', projectDescription: ''),
-  Project(projectName: 'Tetrix', projectDescription: ''),
-  Project(projectName: 'SSK Admin', projectDescription: ''),
-  Project(projectName: 'SSK Buddy', projectDescription: ''),
-  Project(projectName: 'SSK', projectDescription: ''),
+  Project(projectName: 'My VCA', projectDescription: ''),
+  Project(
+      projectName: 'Standard Chartered Corporate Cards',
+      projectDescription: ''),
+  Project(projectName: 'LivQuick Tag Issuance', projectDescription: ''),
+  Project(projectName: 'My Companion', projectDescription: ''),
   Project(projectName: 'Smart Home Automation', projectDescription: ''),
 ];
 
