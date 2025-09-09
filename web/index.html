@@ -1,63 +1,142 @@
 <!DOCTYPE html>
-<html>
-
+<html style="background: linear-gradient(to bottom right, #2c3a87, #0061C7);">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="$FLUTTER_BASE_HREF">
-
+  <base href="/">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
+  <meta name="description" content="SCB Card Holder - Portal">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="portfolio">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <title>portfolio</title>
+  <meta name="apple-mobile-web-app-title" content="SCB Card Holder">
+  <!-- <meta name="mobile-web-app-capable" content="yes"> -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' 'wasm-eval' 'nonce-yourNonceHere' https://www.gstatic.com;"> -->
+  <link rel="apple-touch-icon" href="splash_logo_web.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>SCB Card Holder</title>
   <link rel="manifest" href="manifest.json">
+<style>
+    body {
+      background: linear-gradient(to bottom right, #ecedf3, #b2bbc4);
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(to bottom right, #dfe0e8, #0061C7);
+    }
+    .loading-content {
+      text-align: center;
+      transform: translateZ(0);
+      will-change: opacity;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      width: 100%;
+      max-width: 715px;
+      padding: 20px;
+    }
+.app-logo {
+  width: 100%;
+  max-width: 357.5px;
+  height: auto;
+  aspect-ratio: 715/280;
+  object-fit: contain;
+  margin-bottom: 40px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+    .dots-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 80px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      margin: 0 4px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: dot-animation 1.4s infinite ease-in-out;
+    }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+    
+    .loading-text {
+      color: black;
+      font-family: sans-serif;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+    
+    @keyframes dot-animation {
+      0%, 100% { transform: scale(0.3); opacity: 0.4; }
+      50% { transform: scale(1); opacity: 1; }
+    }
+    
+    .fade {
+      animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+ 
+    .pulse {
+      animation: pulse 2s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+ 
+    @media (max-width: 768px) {
+      .app-logo {
+        width: 90%;
+        max-width: 250;
+      }
+      .loading-content {
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <script src="flutter_bootstrap.js" async></script>
-  <script type="text/javascript">
-    window.flutterWebRenderer = "html";
-  </script>
-  <script type="module">
-
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyC-MTZB5n25yHtJykuCaEODCMxl-R447Cw",
-      authDomain: "vijay-balaji-portfolio.firebaseapp.com",
-      projectId: "vijay-balaji-portfolio",
-      storageBucket: "vijay-balaji-portfolio.appspot.com",
-      messagingSenderId: "316440346057",
-      appId: "1:316440346057:web:88eb14b61cfe771d6abc18",
-      measurementId: "G-KED5RDVHJW"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
+  <div id="loading" class="loading">
+    <div class="loading-content fade">
+      <img
+        src="splash_logo_web.png"
+        alt="SCB Logo"
+        class="app-logo"
+        fetchpriority="high"
+      />
+      <div class="dots-container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div id="loading-text" class="loading-text"></div>
+    </div>
+  </div>
+ 
+  <script src="splash_init.js" defer></script>
+  <script src="flutter_bootstrap.js" defer></script>
 </body>
-
 </html>
